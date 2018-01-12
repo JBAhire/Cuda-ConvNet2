@@ -1,4 +1,5 @@
-# I've released an update to cuda-convnet, called cuda-convnet2. The two main new features are faster training on Kepler-generation GPUs and support for multi-GPU training.
+# CUDA-COVNET
+## I've released an update to cuda-convnet, called cuda-convnet2. The two main new features are faster training on Kepler-generation GPUs and support for multi-GPU training.
 
 This is a fast C++/CUDA implementation of convolutional (or more generally, feed-forward) neural networks. It can model arbitrary layer connectivity and network depth. Any directed acyclic graph of layers will do. Training is done using the back-propagation algorithm.
 
