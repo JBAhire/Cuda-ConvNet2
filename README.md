@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+# I've released an update to cuda-convnet, called cuda-convnet2. The two main new features are faster training on Kepler-generation GPUs and support for multi-GPU training.
 
-You can use the [editor on GitHub](https://github.com/JBAhire/Cuda-Covnet2/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is a fast C++/CUDA implementation of convolutional (or more generally, feed-forward) neural networks. It can model arbitrary layer connectivity and network depth. Any directed acyclic graph of layers will do. Training is done using the back-propagation algorithm.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Fermi-generation GPU (GTX 4xx, GTX 5xx, or Tesla equivalent) required.
+Documentation
 
-### Markdown
+    Compiling -- how to check out and compile this code.
+    Data -- what kind of data this net can train on.
+    LayerParams -- how to specify an architecture for the net.
+    NeuronTypes -- types of hidden unit nonlinearities.
+    TrainingNet -- how to train the net.
+    Options -- the command-line arguments that the net takes.
+    ViewingNet -- how to look inside the checkpoints saved by the net.
+    CheckingGradients -- how to numerically test the gradients for correctness.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Fast results
 
-```markdown
-Syntax highlighted code block
+    11% error on CIFAR-10 in 75 minutes, with image translations and horizontal reflections (def, params).
+    13% error on CIFAR-10 in 25 minutes, with image translations and horizontal reflections (def, params).
+        See Methodology for details of training.
 
-# Header 1
-## Header 2
-### Header 3
+            Filters learned by this net:
 
-- Bulleted
-- List
+               
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JBAhire/Cuda-Covnet2/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    18% error on CIFAR-10 in 20 minutes, without any image translations/transformations/preprocessing (def, params).
+    26% error on CIFAR-10 in 80 seconds, without any image translations/transformations/preprocessing (def, params).
