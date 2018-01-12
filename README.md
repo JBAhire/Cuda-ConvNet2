@@ -23,7 +23,7 @@ Documentation
 
             Filters learned by this net:
 
-               
+               https://github.com/JBAhire/Cuda-ConvNet2/blob/master/80-second-filters2.png
 
     18% error on CIFAR-10 in 20 minutes, without any image translations/transformations/preprocessing (def, params).
     26% error on CIFAR-10 in 80 seconds, without any image translations/transformations/preprocessing (def, params).
